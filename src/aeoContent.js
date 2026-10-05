@@ -15,5 +15,43 @@ export const aeoContent = `
 <section class="social-benefits social-section"><div class="social-section-label social-reveal"><span>07</span><em>KEY BENEFITS</em></div><div class="social-benefits-head social-reveal"><h2>Discover the advantages of choosing The Buzz Media.</h2><p>Build a system that is useful today and ready for what comes next.</p></div><div class="social-benefit-grid"><article class="social-benefit-card social-reveal"><span>01</span><h3>AI Answer Visibility</h3><p>Make important information easier for answer systems to find.</p></article><article class="social-benefit-card social-reveal"><span>02</span><h3>Brand Authority</h3><p>Strengthen the signals around your expertise.</p></article><article class="social-benefit-card social-reveal"><span>03</span><h3>Increased Discovery</h3><p>Improve how your brand appears across modern search journeys.</p></article><article class="social-benefit-card social-reveal"><span>04</span><h3>Competitive Edge</h3><p>Prepare your content for changing search behavior.</p></article></div></section>
 <section class="social-consultation social-section social-reveal" id="consultation"><div class="social-section-label"><span>08</span><em>START A FREE CONSULTATION</em></div><h2>Start Your Answer Engine Optimization Project Today.</h2><p>Tell us what you are building and we'll map a practical next step within 24 hours.</p><form class="social-mini-form" onsubmit="return false"><input type="text" placeholder="Full Name"><input type="email" placeholder="Email"><input type="text" placeholder="Business / Brand"><input type="text" placeholder="Phone Number"><textarea placeholder="Tell us about your project..."></textarea><button type="button">Send Enquiry ↗</button></form></section>
 <section class="service-cta social-detail-cta social-reveal"><p class="service-kicker">LET'S COLLABORATE</p><h2>LET'S WORK<br>TOGETHER.</h2><a href="#contact" class="service-round-cta"><span>Get In<br>Touch</span><b>↗</b></a></section>
-<footer class="about-footer service-footer social-footer"><div class="about-footer-brand"><img src="https://raw.githubusercontent.com/Ateeqqqq/thebuzzmedia-assets/refs/heads/main/logo.png-Photoroom.png" alt="The Buzz Media"><p>Digital experiences, marketing systems, software and AI solutions for ambitious brands.</p><a href="tel:+919182041323">+91 91820 41323</a><a href="mailto:hello.thebuzzmedia@gmail.com">hello.thebuzzmedia@gmail.com</a></div><div class="about-footer-map"><iframe title="The Buzz Media location" src="https://www.google.com/maps?q=Pillar%20No.%20209%2C%20MQ%20Splendor%2C%20Upperpally%2C%20Hyderabad%2C%20Telangana%20500048&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div><div class="about-footer-bottom"><span>© 2026 The Buzz Media. All rights reserved.</span><span>Hyderabad, India</span></div></footer>
+<footer class="about-footer service-footer social-footer premium-footer">
+  <div class="premium-footer-top">
+    <div class="premium-footer-brand">
+      <a class="premium-footer-logo" href="#home" aria-label="The Buzz Media home"><span class="premium-footer-logo-mark">TB</span><span class="premium-footer-logo-name">THE BUZZ <b>MEDIA</b></span></a>
+      <p>The Buzz Media is a full-service digital marketing agency building brands through strategy, design, technology, marketing and AI.</p>
+      <div class="premium-footer-contact">
+        <a href="tel:+919182041323"><span>↗</span> +91 9182041323</a>
+        <a href="mailto:hello.thebuzzmedia@gmail.com"><span>↗</span> hello.thebuzzmedia@gmail.com</a>
+      </div>
+    </div>
+    <div class="premium-footer-column">
+      <span class="premium-footer-label">SERVICES</span>
+      <a href="#digital-marketing">Digital Marketing</a>
+      <a href="#performance-marketing">Performance Marketing</a>
+      <a href="#social-media-marketing">Social Media Marketing</a>
+      <a href="#seo">SEO</a>
+      <a href="#aeo">AEO</a>
+      <a href="#geo">GEO</a>
+    </div>
+    <div class="premium-footer-column">
+      <span class="premium-footer-label">DEVELOPMENT</span>
+      <a href="#website-development">Website Development</a>
+      <a href="#app-development">App Development</a>
+      <a href="#erp-business-software">ERP &amp; Business Software</a>
+      <a href="#graphic-designing">Graphic Designing</a>
+      <a href="#contact">Start a Project</a>
+      <a href="#about">About Us</a>
+    </div>
+    <div class="premium-footer-map">
+      <span class="premium-footer-label">HYDERABAD STUDIO</span>
+      <iframe title="The Buzz Media location" src="https://www.google.com/maps?q=Pillar%20No.%20209%2C%20MQ%20Splendor%2C%20Upperpally%2C%20Hyderabad%2C%20Telangana%20500048&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  <div class="premium-footer-bottom">
+    <span>© 2026 The Buzz Media. All rights reserved.</span>
+    <div><a href="#home">Home</a><a href="#services">Services</a><a href="#contact">Contact</a></div>
+    <span>Hyderabad, India</span>
+  </div>
+</footer>
 `;
