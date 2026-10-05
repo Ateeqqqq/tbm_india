@@ -4297,3 +4297,101 @@ body { background:#000; color:#fff; text-rendering:optimizeLegibility; -webkit-f
   .website-page .social-services-grid,
   .graphic-page .social-services-grid { grid-template-columns:1fr !important; }
 }
+
+/* =========================================================
+   AEO + GEO · REFERENCE-LED PREMIUM PAGES
+   TBM orange only, never the reference red.
+   ========================================================= */
+.aeo-page .social-detail-hero,
+.geo-page .social-detail-hero {
+  min-height:680px;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.58) 52%,rgba(0,0,0,.76)),
+    url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=90&w=1800") center/cover no-repeat;
+}
+.aeo-page .social-detail-hero h1,
+.geo-page .social-detail-hero h1 {
+  max-width:1050px;
+  font-size:clamp(58px,7vw,106px);
+  line-height:.91;
+  letter-spacing:-.075em;
+}
+.aeo-page .social-detail-hero h1 span,
+.geo-page .social-detail-hero h1 span,
+.aeo-page .social-intro h2 span,
+.geo-page .social-intro h2 span {
+  color:#FF6A00 !important;
+}
+.aeo-page .social-services-grid,
+.geo-page .social-services-grid {
+  grid-template-columns:repeat(6,minmax(0,1fr)) !important;
+  gap:16px !important;
+}
+.aeo-page .social-service-card,
+.geo-page .social-service-card {
+  grid-column:span 2 !important;
+  min-height:300px;
+}
+.aeo-page .social-service-card:nth-child(4),
+.geo-page .social-service-card:nth-child(4) { grid-column:2 / span 2 !important; }
+.aeo-page .social-service-card:nth-child(5),
+.geo-page .social-service-card:nth-child(5) { grid-column:4 / span 2 !important; }
+
+.aeo-page .social-process-grid,
+.geo-page .social-process-grid {
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.aeo-page .social-process-card,
+.geo-page .social-process-card {
+  min-height:280px;
+}
+.aeo-page .social-faq-grid,
+.geo-page .social-faq-grid {
+  align-items:stretch;
+}
+.aeo-page .social-faq-item summary,
+.geo-page .social-faq-item summary {
+  transition:color .25s ease;
+}
+.aeo-page .social-faq-item[open] summary,
+.geo-page .social-faq-item[open] summary {
+  color:#FF6A00;
+}
+.aeo-page .social-benefit-grid,
+.geo-page .social-benefit-grid {
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.aeo-page .social-benefit-card,
+.geo-page .social-benefit-card {
+  min-height:280px;
+}
+.aeo-page .social-detail-marquee,
+.geo-page .social-detail-marquee {
+  background:#FF6A00 !important;
+  color:#111 !important;
+  min-height:56px;
+}
+@media(max-width:900px){
+  .aeo-page .social-services-grid,
+  .geo-page .social-services-grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+  .aeo-page .social-service-card,
+  .aeo-page .social-service-card:nth-child(4),
+  .aeo-page .social-service-card:nth-child(5),
+  .geo-page .social-service-card,
+  .geo-page .social-service-card:nth-child(4),
+  .geo-page .social-service-card:nth-child(5) { grid-column:auto !important; }
+  .aeo-page .social-process-grid,
+  .geo-page .social-process-grid,
+  .aeo-page .social-benefit-grid,
+  .geo-page .social-benefit-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:600px){
+  .aeo-page .social-services-grid,
+  .geo-page .social-services-grid,
+  .aeo-page .social-process-grid,
+  .geo-page .social-process-grid,
+  .aeo-page .social-benefit-grid,
+  .geo-page .social-benefit-grid { grid-template-columns:1fr !important; }
+}
+
+/* Favicon: make the browser tab use the same TBM logo as the header. */
