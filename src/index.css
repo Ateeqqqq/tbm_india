@@ -3430,3 +3430,128 @@ body { background:#000; color:#fff; text-rendering:optimizeLegibility; -webkit-f
   .performance-page .performance-how-card,
   .performance-page .performance-faq-item { transition:none; }
 }
+
+/* =========================================================
+   PERFORMANCE HERO V2
+   Fixes the oversized/washed-out hero while preserving
+   the cinematic reference feel.
+   ========================================================= */
+.performance-page .performance-hero-v2 {
+  min-height:680px;
+  height:min(760px,calc(100vh - 92px));
+  padding:120px 7.5% 78px;
+  align-items:center;
+  isolation:isolate;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.84) 0%,rgba(0,0,0,.62) 48%,rgba(0,0,0,.48) 100%),
+    linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.35) 68%,#000 100%),
+    url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=88&w=1800") center 44%/cover no-repeat;
+}
+.performance-page .performance-hero-v2::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 72% 38%,rgba(255,45,45,.16),transparent 24%),
+    radial-gradient(circle at 18% 88%,rgba(255,106,0,.18),transparent 28%);
+  pointer-events:none;
+}
+.performance-page .performance-hero-v2::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.035) 50%,transparent 65%);
+  background-size:220% 100%;
+  animation:performanceHeroSweep 9s ease-in-out infinite;
+  pointer-events:none;
+}
+.performance-page .performance-hero-v2 .social-hero-grid {
+  opacity:.055;
+  background-size:88px 88px;
+}
+.performance-page .performance-hero-v2 .social-hero-glow-orange {
+  width:420px;height:420px;
+  left:-120px;bottom:-170px;
+  background:rgba(255,45,45,.16);
+  filter:blur(110px);
+}
+.performance-page .performance-hero-v2 .social-hero-glow-blue {
+  width:300px;height:300px;
+  right:4%;top:12%;
+  background:rgba(255,70,70,.09);
+  filter:blur(100px);
+}
+.performance-page .performance-hero-v2 .social-hero-inner {
+  width:min(1280px,100%);
+}
+.performance-page .performance-hero-v2 .social-kicker {
+  margin-bottom:26px;
+  color:#ff6a00;
+  font-size:10px;
+  letter-spacing:.16em;
+}
+.performance-page .performance-hero-v2 h1 {
+  max-width:1050px;
+  font-size:clamp(58px,7.25vw,108px);
+  line-height:.88;
+  letter-spacing:-.075em;
+  text-wrap:balance;
+}
+.performance-page .performance-hero-v2 h1 span {
+  display:inline;
+  color:#ff6a00;
+}
+.performance-page .performance-hero-v2 .social-hero-meta {
+  max-width:900px;
+  margin-top:38px;
+  align-items:center;
+}
+.performance-page .performance-hero-v2 .social-hero-meta p {
+  max-width:600px;
+  color:rgba(255,255,255,.72);
+  font-size:13px;
+}
+.performance-page .performance-hero-v2 .social-hero-meta a {
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  white-space:nowrap;
+  padding:13px 18px;
+  border:1px solid rgba(255,106,0,.45);
+  border-radius:999px;
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(10px);
+  transition:transform .35s var(--tbm-ease),background .3s ease,border-color .3s ease;
+}
+.performance-page .performance-hero-v2 .social-hero-meta a:hover {
+  transform:translateY(-4px);
+  background:rgba(255,106,0,.12);
+  border-color:#ff6a00;
+}
+@keyframes performanceHeroSweep {
+  0%,100% { transform:translateX(-20%);opacity:.25; }
+  50% { transform:translateX(20%);opacity:.65; }
+}
+@media(max-width:800px){
+  .performance-page .performance-hero-v2 {
+    min-height:650px;
+    height:auto;
+    padding:120px 6% 72px;
+  }
+  .performance-page .performance-hero-v2 h1 {
+    font-size:clamp(48px,13vw,76px);
+    line-height:.9;
+  }
+  .performance-page .performance-hero-v2 .social-hero-meta {
+    display:block;
+    margin-top:32px;
+  }
+  .performance-page .performance-hero-v2 .social-hero-meta a {
+    margin-top:22px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .performance-page .performance-hero-v2::after{animation:none;}
+}
