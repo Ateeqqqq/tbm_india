@@ -59,9 +59,43 @@ export const appDevelopmentContent = `
   <form class="social-mini-form" onsubmit="return false"><input type="text" placeholder="Full Name" aria-label="Full Name"><input type="email" placeholder="Email" aria-label="Email"><input type="text" placeholder="Business / Brand" aria-label="Business / Brand"><input type="text" placeholder="Phone Number" aria-label="Phone Number"><textarea placeholder="Tell us about your project..." aria-label="Project details"></textarea><button type="button">Send Enquiry ↗</button></form>
 </section>
 <section class="service-cta social-detail-cta social-reveal"><p class="service-kicker">LET'S COLLABORATE</p><h2>LET'S WORK<br>TOGETHER.</h2><a href="#contact" class="service-round-cta"><span>Get In<br>Touch</span><b>↗</b></a></section>
-<footer class="about-footer service-footer social-footer">
-  <div class="about-footer-brand"><img src="https://raw.githubusercontent.com/Ateeqqqq/thebuzzmedia-assets/refs/heads/main/logo.png-Photoroom.png" alt="The Buzz Media"><p>Digital experiences, marketing systems, software and AI solutions for ambitious brands.</p><a href="tel:+919182041323">+91 91820 41323</a><a href="mailto:hello.thebuzzmedia@gmail.com">hello.thebuzzmedia@gmail.com</a></div>
-  <div class="about-footer-map"><iframe title="The Buzz Media location" src="https://www.google.com/maps?q=Pillar%20No.%20209%2C%20MQ%20Splendor%2C%20Upperpally%2C%20Hyderabad%2C%20Telangana%20500048&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-  <div class="about-footer-bottom"><span>© 2026 The Buzz Media. All rights reserved.</span><span>Hyderabad, India</span></div>
+<footer class="about-footer service-footer social-footer premium-footer">
+  <div class="premium-footer-top">
+    <div class="premium-footer-brand">
+      <a class="premium-footer-logo" href="#home" aria-label="The Buzz Media home"><span class="premium-footer-logo-mark">TB</span><span class="premium-footer-logo-name">THE BUZZ <b>MEDIA</b></span></a>
+      <p>The Buzz Media is a full-service digital marketing agency building brands through strategy, design, technology, marketing and AI.</p>
+      <div class="premium-footer-contact">
+        <a href="tel:+919182041323"><span>↗</span> +91 9182041323</a>
+        <a href="mailto:hello.thebuzzmedia@gmail.com"><span>↗</span> hello.thebuzzmedia@gmail.com</a>
+      </div>
+    </div>
+    <div class="premium-footer-column">
+      <span class="premium-footer-label">SERVICES</span>
+      <a href="#digital-marketing">Digital Marketing</a>
+      <a href="#performance-marketing">Performance Marketing</a>
+      <a href="#social-media-marketing">Social Media Marketing</a>
+      <a href="#seo">SEO</a>
+      <a href="#aeo">AEO</a>
+      <a href="#geo">GEO</a>
+    </div>
+    <div class="premium-footer-column">
+      <span class="premium-footer-label">DEVELOPMENT</span>
+      <a href="#website-development">Website Development</a>
+      <a href="#app-development">App Development</a>
+      <a href="#erp-business-software">ERP &amp; Business Software</a>
+      <a href="#graphic-designing">Graphic Designing</a>
+      <a href="#contact">Start a Project</a>
+      <a href="#about">About Us</a>
+    </div>
+    <div class="premium-footer-map">
+      <span class="premium-footer-label">HYDERABAD STUDIO</span>
+      <iframe title="The Buzz Media location" src="https://www.google.com/maps?q=Pillar%20No.%20209%2C%20MQ%20Splendor%2C%20Upperpally%2C%20Hyderabad%2C%20Telangana%20500048&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  <div class="premium-footer-bottom">
+    <span>© 2026 The Buzz Media. All rights reserved.</span>
+    <div><a href="#home">Home</a><a href="#services">Services</a><a href="#contact">Contact</a></div>
+    <span>Hyderabad, India</span>
+  </div>
 </footer>
 `;
