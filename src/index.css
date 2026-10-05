@@ -4395,3 +4395,167 @@ body { background:#000; color:#fff; text-rendering:optimizeLegibility; -webkit-f
 }
 
 /* Favicon: make the browser tab use the same TBM logo as the header. */
+
+/* =========================================================
+   SITEWIDE CLEANUP + MOBILE-FIRST REFERENCE PASS
+   ========================================================= */
+
+/* No magnifying lens / fake loader anywhere. */
+.tbm-cursor-lens,
+.tbm-cursor-lens-content { display:none !important; }
+
+/* Main service strip: taller, readable, genuinely continuous. */
+.service-marquee {
+  height:58px;
+  min-height:58px;
+}
+.service-marquee-track {
+  width:max-content;
+  animation:serviceMarquee 24s linear infinite !important;
+  will-change:transform;
+}
+.service-marquee span {
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:1.7px;
+  margin:0 34px;
+}
+.service-marquee b { font-size:17px; }
+
+/* Homepage mobile composition inspired by the reference site:
+   compact header, oversized type, breathing room, single-column flow. */
+@media (max-width:800px) {
+  .main-header {
+    height:72px !important;
+    min-height:72px !important;
+    padding:7px 18px !important;
+  }
+  .header-logo-image {
+    width:auto !important;
+    max-width:145px !important;
+    max-height:42px !important;
+    object-fit:contain;
+  }
+  .header-right { gap:8px !important; }
+  .header-circle {
+    width:36px !important;
+    height:36px !important;
+  }
+
+  .hero-reference {
+    min-height:650px !important;
+    padding:92px 6% 72px !important;
+  }
+  .hero-reference .w-full {
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+  .hero-reference .text-xl,
+  .hero-reference .lg\:text-2xl {
+    font-size:12px !important;
+    margin-bottom:20px !important;
+    letter-spacing:.08em;
+  }
+  .hero-reference h1 {
+    font-size:clamp(48px,14vw,76px) !important;
+    line-height:.93 !important;
+    letter-spacing:-.055em !important;
+  }
+  .hero-reference .mb-24 { margin-bottom:58px !important; }
+  .hero-reference .flex-col.lg\:flex-row {
+    gap:34px !important;
+  }
+  .hero-reference .max-w-2xl {
+    max-width:100% !important;
+  }
+  .hero-reference .text-base {
+    font-size:15px !important;
+    line-height:1.55 !important;
+  }
+
+  .service-marquee {
+    height:58px !important;
+    min-height:58px !important;
+  }
+  .service-marquee span {
+    font-size:12px !important;
+    letter-spacing:1.35px !important;
+    margin:0 24px !important;
+  }
+  .service-marquee b { font-size:14px !important; }
+
+  /* Reference-style mobile service sections. */
+  .social-page .social-detail-hero {
+    min-height:560px !important;
+    padding:105px 7% 70px !important;
+  }
+  .social-page .social-detail-hero h1 {
+    font-size:clamp(46px,13vw,72px) !important;
+    line-height:.93 !important;
+    letter-spacing:-.06em !important;
+  }
+  .social-page .social-hero-meta {
+    margin-top:28px !important;
+    max-width:100% !important;
+  }
+  .social-page .social-hero-meta p {
+    font-size:14px !important;
+    line-height:1.55 !important;
+  }
+  .social-page .social-section {
+    width:88% !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+  .social-page .social-intro-grid,
+  .social-page .social-expertise-grid,
+  .social-page .social-leaders-grid,
+  .social-page .social-faq-grid,
+  .social-page .social-benefits-head {
+    grid-template-columns:1fr !important;
+  }
+  .social-page .social-intro-grid,
+  .social-page .social-expertise-grid,
+  .social-page .social-leaders-grid {
+    gap:28px !important;
+  }
+  .social-page .social-services-grid,
+  .social-page .social-benefit-grid,
+  .social-page .social-process-grid {
+    width:88% !important;
+    grid-template-columns:1fr !important;
+    gap:14px !important;
+  }
+  .social-page .social-service-card,
+  .social-page .social-benefit-card,
+  .social-page .social-process-card {
+    grid-column:auto !important;
+    min-height:250px !important;
+  }
+  .social-page .social-faq-image,
+  .social-page .social-image-card {
+    min-height:270px !important;
+  }
+  .social-page .social-mini-form {
+    grid-template-columns:1fr !important;
+  }
+  .social-page .social-mini-form textarea,
+  .social-page .social-mini-form button {
+    grid-column:1 !important;
+  }
+  .social-page .service-cta h2,
+  .social-page .social-detail-cta h2 {
+    font-size:clamp(54px,15vw,88px) !important;
+    line-height:.9 !important;
+  }
+  .social-page .service-footer {
+    width:88% !important;
+  }
+}
+
+/* Prevent horizontal overflow from marquees, oversized decorative objects,
+   and reference-inspired desktop geometry. */
+html, body, #root {
+  max-width:100%;
+  overflow-x:hidden;
+}
