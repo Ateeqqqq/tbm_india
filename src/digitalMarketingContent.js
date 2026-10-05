@@ -29,8 +29,58 @@ export const digitalMarketingContent = `
   <div class="social-intro-grid"><div><h2>Build an integrated digital marketing system that connects paid media, social, search, content and conversion into one clear growth strategy <span>with The Buzz Media.</span></h2></div><div><p>Build an integrated digital marketing system that connects paid media, social, search, content and conversion into one clear growth strategy.</p><a href="#consultation" class="social-inline-link">Build my strategy <span>↗</span></a></div></div>
 </section>
 <section class="social-services-grid social-section"><article class="social-service-card social-reveal"><span class="social-card-number">01</span><span class="social-card-icon">✦</span><h3>360° Digital Marketing Services</h3><p>Bring channels together under one measurable strategy covering awareness, acquisition, conversion and retention.</p><small>FULL-FUNNEL</small></article><article class="social-service-card social-reveal"><span class="social-card-number">02</span><span class="social-card-icon">↗</span><h3>Performance Marketing</h3><p>Use paid campaigns to create qualified demand and turn attention into measurable action.</p><small>PAID MEDIA</small></article><article class="social-service-card social-reveal"><span class="social-card-number">03</span><span class="social-card-icon">⌖</span><h3>SEO & Local Listings</h3><p>Grow discoverability with search optimization and local presence management.</p><small>SEARCH · LOCAL</small></article><article class="social-service-card social-reveal"><span class="social-card-number">04</span><span class="social-card-icon">◎</span><h3>Social Media Marketing</h3><p>Build a recognizable social presence through strategy, content, community and paid distribution.</p><small>SOCIAL · CONTENT</small></article><article class="social-service-card social-reveal"><span class="social-card-number">05</span><span class="social-card-icon">◌</span><h3>Retargeting Strategies</h3><p>Reconnect with high-intent visitors and move them closer to conversion with smarter sequences.</p><small>RETARGETING</small></article><article class="social-service-card social-reveal"><span class="social-card-number">06</span><span class="social-card-icon">▣</span><h3>Content Marketing</h3><p>Create useful, persuasive content that builds authority, trust and long-term demand.</p><small>CONTENT · BRAND</small></article></section>
-<section class="social-tools social-section social-reveal">
-  <div class="social-section-label"><span>02</span><em>TOOLS &amp; ECOSYSTEM</em></div><h2>Explore our digital marketing ecosystem.</h2><p>The right channel mix depends on your audience, offer and goals. We build the stack around what can actually move the business.</p><div class="social-tool-row"><span>Google Ads</span><span>Meta Ads</span><span>Instagram</span><span>LinkedIn</span><span>Google Analytics</span><span>Search Console</span><span>Canva</span><span>Looker Studio</span><span>HubSpot</span></div>
+<section class="social-tools digital-tools-reference social-section social-reveal">
+  <div class="social-section-label"><span>02</span><em>TOOLS &amp; ECOSYSTEM</em></div>
+  <h2>Explore Our Digital Marketing Tool Stack</h2>
+  <p>Discover the tools and technologies we use to optimize digital marketing campaigns, drive traffic, and boost ROI.</p>
+
+  <div class="digital-tool-category">
+    <h3>Digital Marketing Strategy Tools</h3>
+    <div class="digital-tool-logos">
+      <figure><img src="https://digitali360.com/public/images/hootsuite.svg" alt="Hootsuite"><figcaption>Hootsuite</figcaption></figure>
+      <figure><img src="https://digitali360.com/public/images/buffer.png" alt="Buffer"><figcaption>Buffer</figcaption></figure>
+      <figure><img src="https://digitali360.com/public/images/sprout-social.png" alt="Sprout Social"><figcaption>Sprout Social</figcaption></figure>
+      <figure><img src="https://digitali360.com/public/images/trello.png" alt="Trello"><figcaption>Trello</figcaption></figure>
+      <figure><img src="https://digitali360.com/public/images/asana.png" alt="Asana"><figcaption>Asana</figcaption></figure>
+      <figure><img src="https://digitali360.com/public/images/monday.com.png" alt="Monday.com"><figcaption>Monday.com</figcaption></figure>
+      <figure><img src="https://digitali360.com/public/images/meetedgar.png" alt="MeetEdgar"><figcaption>MeetEdgar</figcaption></figure>
+      <figure><img src="https://digitali360.com/public/images/loomly.png" alt="Loomly"><figcaption>Loomly</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="digital-tool-category">
+    <h3>Content Creation Tools</h3>
+    <div class="digital-tool-logos">
+      <figure><img src="https://static.vecteezy.com/system/resources/thumbnails/056/850/847/small/canva-app-logo-on-a-transparent-background-free-png.png" alt="Canva"><figcaption>Canva</figcaption></figure>
+      <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmBi0LQ11CEQyXWfAefJIQwRMjZu1y8y96ZyO0-uQO6IAnWMpvDRyOhuQ&s=10" alt="Adobe Photoshop"><figcaption>Adobe Photoshop</figcaption></figure>
+      <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE1YLrtNazgUIh2WlkNXDnmD-Z8MAeX12x1tKq0N59qQ&s=10" alt="CapCut"><figcaption>CapCut</figcaption></figure>
+      <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpgtXkbFOMuTZIWXkV-j2peN3ItujzKR9yCl1NLA641w&s=10" alt="Figma"><figcaption>Figma</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="digital-tool-category">
+    <h3>Paid Digital Advertising Platforms</h3>
+    <div class="digital-tool-logos">
+      <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU2f720mEr_iWXJMZtL5pIWIajDeJZuccJWEyKBeRnNg&s=10" alt="Facebook Ads Manager"><figcaption>Facebook Ads Manager</figcaption></figure>
+      <figure><img src="https://digitali360.com/public/images/g-ads.png" alt="Google Ads"><figcaption>Google Ads</figcaption></figure>
+      <figure><img src="https://digitali360.com/public/images/linkedin.png" alt="LinkedIn Campaign Manager"><figcaption>LinkedIn Campaign Manager</figcaption></figure>
+      <figure><img src="https://digitali360.com/public/images/twitter.png" alt="Twitter Ads"><figcaption>Twitter Ads</figcaption></figure>
+      <figure><img src="https://digitali360.com/public/images/pinterest.png" alt="Pinterest Ads"><figcaption>Pinterest Ads</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="digital-tool-category">
+    <h3>Digital Marketing Analytics Tools</h3>
+    <div class="digital-tool-logos">
+      <figure><img src="https://digitali360.com/public/images/g-analytics.png" alt="Google Analytics"><figcaption>Google Analytics</figcaption></figure>
+      <figure><img src="https://digitali360.com/public/images/hootsuite.svg" alt="Hootsuite Analytics"><figcaption>Hootsuite Analytics</figcaption></figure>
+      <figure><img src="https://digitali360.com/public/images/sprout-social.png" alt="Sprout Social Reports"><figcaption>Sprout Social Reports</figcaption></figure>
+      <figure><img src="https://digitali360.com/public/images/buffer.png" alt="Buffer Analytics"><figcaption>Buffer Analytics</figcaption></figure>
+      <figure><img src="https://digitali360.com/public/images/brandwatch.png" alt="Brandwatch"><figcaption>Brandwatch</figcaption></figure>
+      <figure><img src="https://digitali360.com/public/images/quintly.png" alt="Quintly"><figcaption>Quintly</figcaption></figure>
+      <figure><img src="https://digitali360.com/public/images/iconosquare.png" alt="Iconosquare"><figcaption>Iconosquare</figcaption></figure>
+    </div>
+  </div>
 </section>
 <section class="social-expertise social-section">
   <div class="social-section-label social-reveal"><span>03</span><em>WHY CHOOSE US</em></div>
