@@ -21,17 +21,14 @@ export const socialMediaContent = `
   </div>
 </header>
 
-<section class="social-detail-hero social-reveal">
+<section class="social-detail-hero social-reveal social-media-hero-v2">
   <div class="social-hero-glow social-hero-glow-orange"></div>
   <div class="social-hero-glow social-hero-glow-blue"></div>
   <div class="social-hero-grid"></div>
   <div class="social-hero-inner">
     <p class="social-kicker">THE BUZZ MEDIA · SOCIAL MEDIA MARKETING</p>
-    <h1>Transform your online<br>presence with <span>Social Media.</span></h1>
-    <div class="social-hero-meta">
-      <p>Strategy, content, paid media and community systems designed to make ambitious brands impossible to ignore.</p>
-      <a href="#social-services">Explore social services <span>↘</span></a>
-    </div>
+    <h1>Social Media <span>Marketing</span></h1>
+    <a class="social-hero-more" href="#social-services">More Services <span>↘</span></a>
   </div>
 </section>
 
