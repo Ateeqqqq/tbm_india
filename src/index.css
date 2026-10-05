@@ -3768,3 +3768,153 @@ body { background:#000; color:#fff; text-rendering:optimizeLegibility; -webkit-f
 @media(prefers-reduced-motion:reduce){
   .social-page.social-page .social-media-hero-v2::after{animation:none}
 }
+
+/* =========================================================
+   TBM SERVICE SYSTEM V3
+   One brand language: #FF6A00 orange. Reference layouts
+   remain, sample-page red does not.
+   ========================================================= */
+.social-page {
+  --service-accent:#FF6A00;
+  --service-accent-rgb:255,106,0;
+}
+
+/* All detail-page accent elements use TBM orange. */
+.social-page .social-kicker,
+.social-page .social-section-label span,
+.social-page .social-hero-meta a span,
+.social-page .social-inline-link span,
+.social-page .social-card-icon,
+.social-page .social-process-card > span,
+.social-page .social-stat-grid strong,
+.social-page .social-consultation h2 span {
+  color:var(--service-accent) !important;
+}
+.social-page .social-card-icon {
+  border-color:rgba(var(--service-accent-rgb),.40) !important;
+}
+.social-page .social-service-card:hover,
+.social-page .social-process-card:hover,
+.social-page .social-benefit-card:hover,
+.social-page .social-list article:hover {
+  border-color:rgba(var(--service-accent-rgb),.36) !important;
+}
+.social-page .social-service-card::before,
+.social-page .social-process-card::after {
+  background:rgba(var(--service-accent-rgb),.11) !important;
+}
+.social-page .social-detail-marquee {
+  background:var(--service-accent) !important;
+  color:#111 !important;
+}
+.social-page .social-mini-form button {
+  background:var(--service-accent) !important;
+  box-shadow:0 12px 40px rgba(var(--service-accent-rgb),.16) !important;
+}
+.social-page .social-stat-grid strong {
+  text-shadow:0 0 28px rgba(var(--service-accent-rgb),.15);
+}
+
+/* Endless, readable marquee. JS duplicates the track once. */
+.social-page .service-marquee {
+  height:52px !important;
+  background:#FF6A00 !important;
+  color:#111 !important;
+}
+.social-page .service-marquee-track {
+  animation:tbmEndlessMarquee 30s linear infinite !important;
+  width:max-content !important;
+}
+.social-page .service-marquee span {
+  font-size:12px !important;
+  font-weight:600 !important;
+  letter-spacing:.14em !important;
+  margin:0 30px !important;
+}
+.social-page .service-marquee b {
+  font-size:15px !important;
+}
+@keyframes tbmEndlessMarquee {
+  from { transform:translate3d(0,0,0); }
+  to { transform:translate3d(-50%,0,0); }
+}
+
+/* SEO: match the reference's dense tool ecosystem, using TBM orange. */
+.seo-page .seo-tools-reference {
+  display:grid;
+}
+.seo-page .social-tools {
+  padding-top:70px;
+  padding-bottom:120px;
+}
+.seo-page .social-tools .social-tool-row {
+  gap:24px 30px;
+}
+.seo-page .social-tools .social-tool-row span {
+  min-width:120px;
+  padding:14px 18px;
+}
+
+/* App Development: strongest product/service presentation. */
+.app-page .social-detail-hero {
+  min-height:680px;
+}
+.app-page .social-detail-hero .social-hero-inner {
+  max-width:1280px;
+}
+.app-page .social-detail-hero h1 {
+  max-width:1050px;
+  font-size:clamp(58px,7.4vw,108px);
+}
+.app-page .social-detail-hero h1 span {
+  color:#FF6A00 !important;
+}
+.app-page .social-services-grid {
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:16px;
+}
+.app-page .social-service-card {
+  grid-column:span 2;
+  min-height:310px;
+  border-radius:18px;
+  background:linear-gradient(145deg,#151515,#080808);
+}
+.app-page .social-service-card:nth-child(4) { grid-column:2 / span 2; }
+.app-page .social-service-card:nth-child(5) { grid-column:4 / span 2; }
+.app-page .social-service-card h3 {
+  font-size:19px;
+}
+.app-page .social-tools {
+  padding-top:80px;
+}
+.app-page .social-tools h2,
+.app-page .social-expertise h2,
+.app-page .social-process-head h2,
+.app-page .social-leaders h2,
+.app-page .social-faq-head h2,
+.app-page .social-benefits-head h2 {
+  text-wrap:balance;
+}
+.app-page .social-image-card {
+  min-height:560px;
+}
+.app-page .social-process-card {
+  min-height:300px;
+}
+.app-page .social-stat-grid strong {
+  color:#FF6A00 !important;
+}
+@media(max-width:1050px){
+  .app-page .social-services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .app-page .social-service-card,
+  .app-page .social-service-card:nth-child(4),
+  .app-page .social-service-card:nth-child(5){grid-column:auto}
+}
+@media(max-width:800px){
+  .social-page .service-marquee {height:48px !important}
+  .social-page .service-marquee span {font-size:10px !important;margin:0 22px !important}
+  .app-page .social-services-grid{grid-template-columns:1fr}
+  .app-page .social-service-card,
+  .app-page .social-service-card:nth-child(4),
+  .app-page .social-service-card:nth-child(5){grid-column:auto}
+}
