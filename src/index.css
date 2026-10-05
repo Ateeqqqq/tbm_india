@@ -4559,3 +4559,143 @@ html, body, #root {
   max-width:100%;
   overflow-x:hidden;
 }
+
+/* =========================================================
+   PREMIUM FOOTER
+   ========================================================= */
+.premium-footer{
+  position:relative;
+  width:100%;
+  padding:86px 7% 28px;
+  background:
+    radial-gradient(circle at 82% 18%,rgba(255,106,0,.10),transparent 25%),
+    linear-gradient(180deg,#090909 0%,#050505 100%);
+  border-top:1px solid rgba(255,255,255,.09);
+  overflow:hidden;
+}
+.premium-footer::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,106,0,.045) 50%,transparent 100%);
+  opacity:.7;
+}
+.premium-footer-top{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1.5fr .9fr .9fr 1.25fr;
+  gap:48px;
+  max-width:1500px;
+  margin:0 auto 70px;
+}
+.premium-footer-brand{max-width:390px}
+.premium-footer-logo{
+  display:inline-flex;
+  align-items:center;
+  gap:13px;
+  color:#fff;
+  text-decoration:none;
+  margin-bottom:24px;
+}
+.premium-footer-logo-mark{
+  display:grid;
+  place-items:center;
+  width:48px;height:48px;
+  border:1px solid rgba(255,106,0,.65);
+  border-radius:14px;
+  color:#FF6A00;
+  font:800 17px/1 'DM Sans',sans-serif;
+  letter-spacing:-.08em;
+  background:rgba(255,106,0,.06);
+  box-shadow:0 0 35px rgba(255,106,0,.08);
+}
+.premium-footer-logo-name{
+  font:700 17px/1 'DM Sans',sans-serif;
+  letter-spacing:.08em;
+}
+.premium-footer-logo-name b{color:#FF6A00}
+.premium-footer-brand>p{
+  margin:0 0 28px;
+  max-width:370px;
+  color:#8e8e8e;
+  font-size:14px;
+  line-height:1.7;
+}
+.premium-footer-contact{display:flex;flex-direction:column;gap:12px}
+.premium-footer-contact a{
+  display:flex;align-items:center;gap:11px;
+  color:#ddd;text-decoration:none;
+  font-size:14px;
+  transition:color .25s ease,transform .25s ease;
+}
+.premium-footer-contact a span{color:#FF6A00;font-size:13px}
+.premium-footer-contact a:hover{color:#FF6A00;transform:translateX(4px)}
+.premium-footer-label{
+  display:block;
+  margin-bottom:19px;
+  color:#FF6A00;
+  font:400 10px/1 'DM Mono',monospace;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.premium-footer-column{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.premium-footer-column a{
+  color:#a6a6a6;
+  text-decoration:none;
+  font-size:13px;
+  line-height:1.35;
+  transition:color .25s ease,transform .25s ease;
+}
+.premium-footer-column a:hover{color:#fff;transform:translateX(4px)}
+.premium-footer-map{min-width:0}
+.premium-footer-map iframe{
+  display:block;
+  width:100%;
+  height:205px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;
+  filter:saturate(.7) contrast(1.08);
+}
+.premium-footer-bottom{
+  position:relative;
+  z-index:1;
+  max-width:1500px;
+  margin:0 auto;
+  padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.08);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  color:#686868;
+  font:400 10px/1.4 'DM Mono',monospace;
+  letter-spacing:.04em;
+}
+.premium-footer-bottom div{display:flex;gap:24px}
+.premium-footer-bottom a{color:#777;text-decoration:none}
+.premium-footer-bottom a:hover{color:#FF6A00}
+@media(max-width:1050px){
+  .premium-footer-top{grid-template-columns:1.2fr 1fr 1fr;gap:36px}
+  .premium-footer-map{grid-column:1/-1;max-width:520px}
+}
+@media(max-width:700px){
+  .premium-footer{padding:62px 7% 24px}
+  .premium-footer-top{grid-template-columns:1fr;gap:38px;margin-bottom:48px}
+  .premium-footer-brand{max-width:none}
+  .premium-footer-logo-mark{width:44px;height:44px}
+  .premium-footer-logo-name{font-size:15px}
+  .premium-footer-brand>p{font-size:14px}
+  .premium-footer-map{max-width:none}
+  .premium-footer-map iframe{height:220px}
+  .premium-footer-bottom{align-items:flex-start;flex-direction:column;gap:14px}
+  .premium-footer-bottom div{gap:16px;flex-wrap:wrap}
+}
+
+/* Remove the thin scroll progress/loading bar at the top. */
+.tbm-scroll-progress{display:none !important;}
