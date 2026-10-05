@@ -45,6 +45,16 @@ export function setupSiteEffects(root) {
   updateProgress({ scroll: window.scrollY });
   cleanups.push(() => { lenis.off("scroll", updateProgress); progress.remove(); });
 
+  // Continuous service marquee: duplicate each track once so the loop
+  // is mathematically seamless instead of visibly jumping at the reset point.
+  const marqueeTracks = [...root.querySelectorAll(".service-marquee-track")];
+  marqueeTracks.forEach((track) => {
+    if (track.dataset.loopReady === "true") return;
+    const original = [...track.children].map((node) => node.cloneNode(true));
+    original.forEach((node) => track.appendChild(node));
+    track.dataset.loopReady = "true";
+  });
+
   // Universal section reveals. Every page gets the same calm, editorial entrance language.
   const revealSelector = [
     ".site-content section:not(.hero-reference):not(.contact-hero):not(.social-detail-hero)",
