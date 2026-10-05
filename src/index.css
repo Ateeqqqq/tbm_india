@@ -2984,3 +2984,224 @@ body { background:#000; color:#fff; text-rendering:optimizeLegibility; -webkit-f
   .tbm-reveal, .tbm-reveal.tbm-reveal-in, .contact-primary-btn, .hero-liquid-button, .service-round-cta, .contact-round-cta, .contact-submit, .social-mini-form button { opacity:1; transform:none; filter:none; transition:none !important; }
   .tbm-scroll-progress span { transition:none; }
 }
+
+
+/* =========================================================
+   PERFORMANCE MARKETING MOTION SYSTEM
+   Scoped only to the Performance Marketing page.
+   ========================================================= */
+.performance-page {
+  --performance-red: #ff1b2d;
+  --performance-orange: #ff6a00;
+  --performance-glow: rgba(255, 27, 45, .20);
+  background:
+    radial-gradient(ellipse 46% 30% at 50% 12%, rgba(255, 27, 45, .08), transparent 72%),
+    radial-gradient(ellipse 36% 28% at 82% 42%, rgba(255, 27, 45, .08), transparent 72%),
+    #000;
+}
+
+.performance-page .social-detail-hero {
+  min-height: 720px;
+  isolation: isolate;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.32), rgba(0,0,0,.82) 78%, #000 100%),
+    url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=88&w=1800") center 38% / cover no-repeat;
+  box-shadow: inset 0 -140px 150px rgba(0,0,0,.88);
+}
+
+.performance-page .social-detail-hero::before {
+  content: "";
+  position: absolute;
+  inset: -5%;
+  z-index: -2;
+  background:
+    linear-gradient(115deg, rgba(255,27,45,.26), transparent 34%, rgba(0,0,0,.10) 62%, rgba(255,27,45,.12)),
+    url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=88&w=1800") center / cover no-repeat;
+  transform: scale(1.06);
+  opacity: .30;
+  animation: performanceHeroDrift 12s ease-in-out infinite alternate;
+}
+
+.performance-page .social-detail-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 78%, rgba(255,27,45,.28), transparent 26%),
+    radial-gradient(circle at 84% 22%, rgba(255,27,45,.16), transparent 24%);
+  animation: performanceGlowPulse 6s ease-in-out infinite;
+}
+
+.performance-page .social-hero-grid {
+  opacity: .10;
+  background-size: 76px 76px;
+  animation: performanceGridDrift 18s linear infinite;
+}
+
+.performance-page .social-hero-glow-orange {
+  width: 380px;
+  height: 380px;
+  background: rgba(255,27,45,.20);
+  filter: blur(105px);
+  animation: performanceOrbFloat 7s ease-in-out infinite;
+}
+
+.performance-page .social-hero-glow-blue {
+  width: 320px;
+  height: 320px;
+  background: rgba(255,27,45,.10);
+  filter: blur(110px);
+  animation: performanceOrbFloatReverse 9s ease-in-out infinite;
+}
+
+.performance-page .social-hero-inner {
+  will-change: transform;
+}
+
+.performance-page .social-kicker {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.performance-page .social-detail-hero.social-in-view .social-kicker {
+  animation: performanceFadeUp .75s .08s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.performance-page .social-detail-hero h1 {
+  opacity: 0;
+  clip-path: inset(0 0 100% 0);
+}
+
+.performance-page .social-detail-hero.social-in-view h1 {
+  animation: performanceTitleReveal 1.15s .18s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.performance-page .social-detail-hero .social-hero-meta {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.performance-page .social-detail-hero.social-in-view .social-hero-meta {
+  animation: performanceFadeUp .85s .45s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.performance-page .social-service-card,
+.performance-page .social-process-card,
+.performance-page .social-benefit-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.performance-page .social-service-card::after,
+.performance-page .social-process-card::after,
+.performance-page .social-benefit-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    180px circle at calc(var(--px, .5) * 100%) calc(var(--py, .5) * 100%),
+    rgba(255,27,45,.18),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity .35s ease;
+  z-index: -1;
+}
+
+.performance-page .social-service-card:hover::after,
+.performance-page .social-process-card:hover::after,
+.performance-page .social-benefit-card:hover::after {
+  opacity: 1;
+}
+
+.performance-page .social-service-card:hover,
+.performance-page .social-process-card:hover,
+.performance-page .social-benefit-card:hover {
+  border-color: rgba(255,27,45,.38) !important;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.52),
+    0 0 45px rgba(255,27,45,.08);
+}
+
+.performance-page .social-card-icon {
+  border-color: rgba(255,27,45,.40);
+  color: var(--performance-red);
+}
+
+.performance-page .social-service-card:hover .social-card-icon {
+  background: rgba(255,27,45,.10);
+  box-shadow: 0 0 24px rgba(255,27,45,.16);
+}
+
+.performance-page .social-image-card img,
+.performance-page .social-faq-image img {
+  will-change: transform;
+}
+
+.performance-page .social-image-card,
+.performance-page .social-faq-image {
+  box-shadow: 0 30px 100px rgba(255,27,45,.06);
+}
+
+.performance-page .social-stat-grid strong {
+  color: var(--performance-red);
+  text-shadow: 0 0 28px rgba(255,27,45,.14);
+}
+
+.performance-page .social-mini-form button {
+  background: var(--performance-red);
+  color: #fff;
+  box-shadow: 0 12px 40px rgba(255,27,45,.16);
+}
+
+@keyframes performanceHeroDrift {
+  from { transform: scale(1.06) translate3d(-1%, -1%, 0); }
+  to { transform: scale(1.12) translate3d(1.5%, 1%, 0); }
+}
+@keyframes performanceGlowPulse {
+  0%,100% { opacity: .55; transform: scale(1); }
+  50% { opacity: .95; transform: scale(1.06); }
+}
+@keyframes performanceGridDrift {
+  from { transform: translate3d(0,0,0); }
+  to { transform: translate3d(-38px,38px,0); }
+}
+@keyframes performanceOrbFloat {
+  0%,100% { margin-top: 0; }
+  50% { margin-top: -28px; }
+}
+@keyframes performanceOrbFloatReverse {
+  0%,100% { margin-top: 0; }
+  50% { margin-top: 24px; }
+}
+@keyframes performanceFadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes performanceTitleReveal {
+  from { opacity: 0; transform: translateY(32px) scale(.985); clip-path: inset(0 0 100% 0); }
+  to { opacity: 1; transform: translateY(0) scale(1); clip-path: inset(0 0 0 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .performance-page .social-detail-hero::before,
+  .performance-page .social-detail-hero::after,
+  .performance-page .social-hero-grid,
+  .performance-page .social-hero-glow-orange,
+  .performance-page .social-hero-glow-blue {
+    animation: none !important;
+  }
+  .performance-page .social-detail-hero h1,
+  .performance-page .social-kicker,
+  .performance-page .social-hero-meta {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+    animation: none !important;
+  }
+}
