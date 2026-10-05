@@ -524,6 +524,109 @@ export function setupSiteEffects(root) {
     cleanups.push(() => tiltCleanups.forEach((cleanup) => cleanup()));
   }
 
+
+  // Performance marketing page-only motion inspired by the reference motion language.
+  const performancePage = root.closest(".performance-page") || root.querySelector(".performance-page");
+  if (performancePage) {
+    const motionReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const hero = performancePage.querySelector(".social-detail-hero");
+    const heroInner = performancePage.querySelector(".social-hero-inner");
+    const heroGlowOrange = performancePage.querySelector(".social-hero-glow-orange");
+    const heroGlowBlue = performancePage.querySelector(".social-hero-glow-blue");
+    const cards = [...performancePage.querySelectorAll(".social-service-card")];
+    const processCards = [...performancePage.querySelectorAll(".social-process-card")];
+    const benefitCards = [...performancePage.querySelectorAll(".social-benefit-card")];
+    const imageCards = [...performancePage.querySelectorAll(".social-image-card, .social-faq-image")];
+    const motionCleanups = [];
+
+    [...cards, ...processCards, ...benefitCards].forEach((card, index) => {
+      card.style.setProperty("--performance-stagger", `${Math.min(index * 65, 420)}ms`);
+    });
+
+    if (!motionReduced && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      const tiltTargets = [...cards, ...processCards, ...benefitCards];
+      tiltTargets.forEach((card) => {
+        const onMove = (event) => {
+          const rect = card.getBoundingClientRect();
+          const x = (event.clientX - rect.left) / rect.width - 0.5;
+          const y = (event.clientY - rect.top) / rect.height - 0.5;
+          card.style.setProperty("--px", `${(x * 2 + .5).toFixed(2)}`);
+          card.style.setProperty("--py", `${(y * 2 + .5).toFixed(2)}`);
+          card.style.transform = `perspective(900px) rotateX(${(-y * 4).toFixed(2)}deg) rotateY(${(x * 5).toFixed(2)}deg) translateY(-7px)`;
+        };
+        const onLeave = () => {
+          card.style.transform = "";
+          card.style.setProperty("--px", ".5");
+          card.style.setProperty("--py", ".5");
+        };
+        card.addEventListener("mousemove", onMove, { passive: true });
+        card.addEventListener("mouseleave", onLeave);
+        motionCleanups.push(() => {
+          card.removeEventListener("mousemove", onMove);
+          card.removeEventListener("mouseleave", onLeave);
+          card.style.transform = "";
+        });
+      });
+    }
+
+    if (!motionReduced && hero) {
+      let targetX = 0, targetY = 0, currentX = 0, currentY = 0, scrollY = 0, currentScroll = 0;
+      const onPointer = (event) => {
+        targetX = (event.clientX / window.innerWidth - 0.5) * 18;
+        targetY = (event.clientY / window.innerHeight - 0.5) * 12;
+      };
+      const onScroll = () => { scrollY = window.scrollY; };
+      window.addEventListener("mousemove", onPointer, { passive: true });
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      let frameId;
+      const animatePerformance = () => {
+        frameId = requestAnimationFrame(animatePerformance);
+        currentX += (targetX - currentX) * 0.035;
+        currentY += (targetY - currentY) * 0.035;
+        currentScroll += (scrollY - currentScroll) * 0.045;
+        const depth = Math.min(currentScroll, 700);
+
+        if (heroInner) heroInner.style.transform = `translate3d(${currentX * .16}px,${currentY * .12 - depth * .045}px,0)`;
+        if (heroGlowOrange) heroGlowOrange.style.transform = `translate3d(${currentX * -.55}px,${currentY * -.35}px,0)`;
+        if (heroGlowBlue) heroGlowBlue.style.transform = `translate3d(${currentX * .35}px,${currentY * .25}px,0)`;
+      };
+      animatePerformance();
+
+      motionCleanups.push(() => {
+        cancelAnimationFrame(frameId);
+        window.removeEventListener("mousemove", onPointer);
+        window.removeEventListener("scroll", onScroll);
+        if (heroInner) heroInner.style.transform = "";
+        if (heroGlowOrange) heroGlowOrange.style.transform = "";
+        if (heroGlowBlue) heroGlowBlue.style.transform = "";
+      });
+    }
+
+    if (!motionReduced) {
+      imageCards.forEach((card) => {
+        const image = card.querySelector("img");
+        if (!image) return;
+        const onMove = (event) => {
+          const rect = card.getBoundingClientRect();
+          const x = (event.clientX - rect.left) / rect.width - .5;
+          const y = (event.clientY - rect.top) / rect.height - .5;
+          image.style.transform = `scale(1.045) translate3d(${x * 10}px,${y * 10}px,0)`;
+        };
+        const onLeave = () => { image.style.transform = ""; };
+        card.addEventListener("mousemove", onMove, { passive: true });
+        card.addEventListener("mouseleave", onLeave);
+        motionCleanups.push(() => {
+          card.removeEventListener("mousemove", onMove);
+          card.removeEventListener("mouseleave", onLeave);
+          image.style.transform = "";
+        });
+      });
+    }
+
+    cleanups.push(() => motionCleanups.forEach((cleanup) => cleanup()));
+  }
+
   // Shared mobile navigation. Works across every generated page without React state.
   const header = root.querySelector(".main-header");
   const menuButton = header?.querySelector(".menu-button");
