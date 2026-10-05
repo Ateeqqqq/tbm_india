@@ -3918,3 +3918,27 @@ body { background:#000; color:#fff; text-rendering:optimizeLegibility; -webkit-f
   .app-page .social-service-card:nth-child(4),
   .app-page .social-service-card:nth-child(5){grid-column:auto}
 }
+
+/* Final brand-color override: reference red is never used as TBM accent. */
+.social-page .social-detail-hero h1 span,
+.social-page .social-media-hero-v2 h1 span,
+.social-page .social-hero-more span,
+.social-page .social-faq-item summary::after {
+  color:#FF6A00 !important;
+}
+.social-page .social-hero-more:hover {
+  background:rgba(255,106,0,.10) !important;
+  border-color:rgba(255,106,0,.5) !important;
+}
+.social-page .social-faq-item summary::after {
+  background:#FF6A00 !important;
+  color:#111 !important;
+}
+.social-page .social-faq-item[open] summary::after {
+  background:#fff !important;
+  color:#111 !important;
+}
+.social-page .social-detail-marquee,
+.social-page .social-media-hero-v2::before {
+  background-color:transparent;
+}
