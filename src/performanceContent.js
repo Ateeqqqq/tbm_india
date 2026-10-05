@@ -15,7 +15,7 @@ export const performanceContent = `
     <button class="header-circle menu-button" type="button" aria-label="Menu"><span>•••</span><span>•••</span><span>•••</span></button>
   </div>
 </header>
-<section class="social-detail-hero social-reveal service-variant-hero">
+<section class="social-detail-hero social-reveal service-variant-hero performance-hero-v2">
   <div class="social-hero-glow social-hero-glow-orange"></div><div class="social-hero-glow social-hero-glow-blue"></div><div class="social-hero-grid"></div>
   <div class="social-hero-inner">
     <p class="social-kicker">THE BUZZ MEDIA · PERFORMANCE MARKETING</p>
