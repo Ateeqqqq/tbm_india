@@ -31,20 +31,6 @@ export function setupSiteEffects(root) {
     document.documentElement.classList.remove("lenis", "lenis-smooth");
   });
 
-  // Global scroll progress. It is compositor-friendly and never triggers React renders.
-  const progress = document.createElement("div");
-  progress.className = "tbm-scroll-progress";
-  progress.innerHTML = "<span></span>";
-  document.body.appendChild(progress);
-  const progressBar = progress.firstElementChild;
-  const updateProgress = ({ scroll }) => {
-    const limit = Math.max(1, lenis.limit || document.documentElement.scrollHeight - window.innerHeight);
-    progressBar.style.transform = `scaleX(${Math.min(1, Math.max(0, scroll / limit))})`;
-  };
-  lenis.on("scroll", updateProgress);
-  updateProgress({ scroll: window.scrollY });
-  cleanups.push(() => { lenis.off("scroll", updateProgress); progress.remove(); });
-
   // Continuous service marquee: duplicate each track once so the loop
   // is mathematically seamless instead of visibly jumping at the reset point.
   const marqueeTracks = [...root.querySelectorAll(".service-marquee-track")];
