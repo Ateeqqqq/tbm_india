@@ -4164,3 +4164,136 @@ body { background:#000; color:#fff; text-rendering:optimizeLegibility; -webkit-f
   .digital-page .social-service-card:nth-child(5),
   .digital-page .social-service-card:nth-child(6) { grid-column:auto; }
 }
+
+/* =========================================================
+   WEBSITE + GRAPHICS SERVICE V2
+   Symmetry first. Reference composition, TBM orange.
+   ========================================================= */
+
+/* All six web cards form a clean 3 x 2 grid. */
+.website-page .social-services-grid,
+.graphic-page .social-services-grid {
+  width:min(1180px,92%);
+  margin-left:auto;
+  margin-right:auto;
+  display:grid !important;
+  grid-template-columns:repeat(6,minmax(0,1fr)) !important;
+  gap:16px !important;
+  align-items:stretch !important;
+}
+.website-page .social-service-card,
+.website-page .social-service-card:nth-child(n),
+.graphic-page .social-service-card,
+.graphic-page .social-service-card:nth-child(n) {
+  grid-column:span 2 !important;
+  min-height:300px;
+}
+.website-page .social-services-grid::after {
+  content:"";
+  grid-column:span 2;
+}
+.graphic-page .social-services-grid::after {
+  content:"";
+  grid-column:span 2;
+}
+
+/* Center the second row rather than leaving a lonely fifth/sixth card. */
+.website-page .social-service-card:nth-child(4) { grid-column:2 / span 2 !important; }
+.website-page .social-service-card:nth-child(5) { grid-column:4 / span 2 !important; }
+.website-page .social-service-card:nth-child(6) { display:none; }
+.graphic-page .social-service-card:nth-child(4) { grid-column:2 / span 2 !important; }
+.graphic-page .social-service-card:nth-child(5) { grid-column:4 / span 2 !important; }
+
+/* Supplied web-development visual bullet. */
+.website-page .social-card-image-icon {
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+}
+.website-page .social-card-image-icon img {
+  width:42px;
+  height:42px;
+  object-fit:contain;
+  border-radius:9px;
+}
+
+/* Web technology section. */
+.website-page .web-tools-reference {
+  width:min(1180px,92%);
+  padding-top:80px;
+  padding-bottom:120px;
+  text-align:center;
+}
+.website-page .web-tools-reference > h2,
+.graphic-page .graphics-tools-reference > h2 {
+  font-size:clamp(36px,4.7vw,66px);
+  line-height:.98;
+  letter-spacing:-.055em;
+  max-width:900px;
+  margin:0 auto 16px;
+}
+.website-page .web-tools-reference > p,
+.graphic-page .graphics-tools-reference > p {
+  max-width:720px;
+  margin:0 auto 52px;
+}
+.web-tech-category,
+.graphics-tool-category {
+  margin:0 auto 34px;
+  padding-top:28px;
+  border-top:1px solid rgba(255,255,255,.055);
+}
+.web-tech-category h3,
+.graphics-tool-category h3 {
+  margin:0 0 20px;
+  color:#f4f4f4;
+  font-size:20px;
+}
+.web-tech-list,
+.graphics-tool-list {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.web-tech-list span,
+.graphics-tool-list span {
+  padding:14px 22px;
+  border:1px solid rgba(255,106,0,.20);
+  border-radius:999px;
+  color:#c9c9c9;
+  background:linear-gradient(145deg,#111,#090909);
+  transition:transform .3s var(--tbm-ease),border-color .3s ease,color .3s ease;
+}
+.web-tech-list span:hover,
+.graphics-tool-list span:hover {
+  transform:translateY(-4px);
+  color:#fff;
+  border-color:rgba(255,106,0,.65);
+}
+
+/* Graphics page gets the same premium hierarchy as the references. */
+.graphic-page .graphics-tools-reference {
+  width:min(1180px,92%);
+  padding-top:80px;
+  padding-bottom:120px;
+  text-align:center;
+}
+.graphic-page .graphics-tool-category {
+  max-width:1000px;
+}
+@media(max-width:900px){
+  .website-page .social-services-grid,
+  .graphic-page .social-services-grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+  .website-page .social-service-card,
+  .website-page .social-service-card:nth-child(4),
+  .website-page .social-service-card:nth-child(5),
+  .website-page .social-service-card:nth-child(6),
+  .graphic-page .social-service-card,
+  .graphic-page .social-service-card:nth-child(4),
+  .graphic-page .social-service-card:nth-child(5) { grid-column:auto !important; }
+}
+@media(max-width:600px){
+  .website-page .social-services-grid,
+  .graphic-page .social-services-grid { grid-template-columns:1fr !important; }
+}
