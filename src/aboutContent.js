@@ -171,7 +171,6 @@ export const aboutContent = `
   <div class="about-closing-orbit"></div>
 </section>
 
-<section id="tbm-globe-about" class="tbm-globe-section" aria-label="Global connection"><div id="tbm-globe-about-mount" class="tbm-globe-mount"></div></section>
 <footer class="about-footer">
   <div class="about-footer-brand"><img src="https://raw.githubusercontent.com/Ateeqqqq/thebuzzmedia-assets/refs/heads/main/logo.png-Photoroom.png" alt="The Buzz Media"><p>Digital experiences, marketing systems, software and AI solutions for ambitious brands.</p><a href="tel:+919182041323">+91 91820 41323</a><a href="mailto:hello.thebuzzmedia@gmail.com">hello.thebuzzmedia@gmail.com</a></div>
   <div class="about-footer-map"><iframe title="The Buzz Media location" src="https://www.google.com/maps?q=Pillar%20No.%20209%2C%20MQ%20Splendor%2C%20Upperpally%2C%20Hyderabad%2C%20Telangana%20500048&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
