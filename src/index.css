@@ -4699,3 +4699,124 @@ html, body, #root {
 
 /* Remove the thin scroll progress/loading bar at the top. */
 .tbm-scroll-progress{display:none !important;}
+
+
+/* =========================================================
+   CRYSTAL GLOW · TBM SERVICE HERO
+   Originkit-inspired shimmer, adapted to the existing
+   hash/HTML content architecture without adding a library.
+   ========================================================= */
+.crystal-glow{
+  --crystal-color:#fff;
+  --crystal-shadow:#FF6A00;
+  --crystal-glare:rgba(255,255,255,.82);
+  position:relative;
+  display:inline-block;
+  isolation:isolate;
+  color:transparent !important;
+  text-decoration:none;
+  white-space:nowrap;
+  cursor:default;
+  transform:translateZ(0);
+}
+.crystal-glow-base,
+.crystal-glow-shine{
+  display:inline-block;
+  font:inherit;
+  letter-spacing:inherit;
+}
+.crystal-glow-base{
+  position:relative;
+  z-index:1;
+  color:transparent !important;
+  text-shadow:
+    0 0 0 var(--crystal-shadow),
+    -2px 2px 0 var(--crystal-shadow),
+    -4px 4px 0 var(--crystal-shadow),
+    -6px 6px 0 var(--crystal-shadow),
+    -8px 8px 0 var(--crystal-shadow);
+  transform:translate(8px,-8px);
+  transition:transform .45s cubic-bezier(.16,1,.3,1),text-shadow .45s ease;
+}
+.crystal-glow-shine{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  display:block;
+  padding:0;
+  background:
+    linear-gradient(
+      108deg,
+      transparent 0 48%,
+      var(--crystal-glare) 48% 52%,
+      transparent 52% 62%,
+      var(--crystal-glare) 62% 68%,
+      transparent 68% 100%
+    ) 200% 0 / 200% 100%,
+    var(--crystal-color);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent !important;
+  -webkit-text-fill-color:transparent;
+  background-repeat:no-repeat;
+  pointer-events:none;
+  transition:background-position .75s linear;
+}
+.crystal-glow:hover .crystal-glow-base{
+  transform:translate(10px,-10px);
+  text-shadow:
+    0 0 0 var(--crystal-shadow),
+    -2px 2px 0 var(--crystal-shadow),
+    -4px 4px 0 var(--crystal-shadow),
+    -6px 6px 0 var(--crystal-shadow),
+    -8px 8px 0 var(--crystal-shadow),
+    -10px 10px 12px rgba(255,106,0,.18);
+}
+.crystal-glow:hover .crystal-glow-shine{
+  background-position:-100% 0;
+}
+.crystal-sparkle{
+  position:absolute;
+  z-index:4;
+  width:.42em;
+  height:.42em;
+  display:grid;
+  place-items:center;
+  color:var(--crystal-glare);
+  font:700 .42em/1 Arial,sans-serif;
+  opacity:0;
+  pointer-events:none;
+  filter:drop-shadow(0 0 7px rgba(255,255,255,.55));
+  transform:translate(-50%,-50%) scale(0);
+}
+.crystal-sparkle-1{left:0;top:18%}
+.crystal-sparkle-2{left:17%;top:82%}
+.crystal-sparkle-3{left:46%;top:38%}
+.crystal-sparkle-4{left:76%;top:64%}
+.crystal-sparkle-5{right:0;top:28%}
+.crystal-glow:hover .crystal-sparkle{
+  animation:tbmCrystalSparkle .72s cubic-bezier(.16,1,.3,1) both;
+}
+.crystal-glow:hover .crystal-sparkle-1{animation-delay:.08s}
+.crystal-glow:hover .crystal-sparkle-2{animation-delay:.16s}
+.crystal-glow:hover .crystal-sparkle-3{animation-delay:.24s}
+.crystal-glow:hover .crystal-sparkle-4{animation-delay:.16s}
+.crystal-glow:hover .crystal-sparkle-5{animation-delay:.32s}
+@keyframes tbmCrystalSparkle{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(0) rotate(0deg)}
+  45%{opacity:1;transform:translate(-50%,-50%) scale(1.25) rotate(10deg)}
+  100%{opacity:0;transform:translate(-50%,-50%) scale(.72) rotate(22deg)}
+}
+@media(max-width:800px){
+  .crystal-glow{white-space:normal}
+  .crystal-glow-base{transform:translate(5px,-5px)}
+  .crystal-glow:hover .crystal-glow-base{transform:translate(6px,-6px)}
+  .crystal-glow-shine{background-size:220% 100%}
+  .crystal-sparkle{font-size:.38em}
+}
+@media(prefers-reduced-motion:reduce){
+  .crystal-glow-base,
+  .crystal-glow-shine{transition:none}
+  .crystal-glow:hover .crystal-glow-shine{background-position:200% 0}
+  .crystal-glow:hover .crystal-sparkle{animation:none}
+}
