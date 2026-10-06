@@ -105,9 +105,9 @@ function parseRGB(input, fb) {
     return fb
 }
 
-const GLOBE_DEFAULTS: Required<GlobeGroup> = { radius: 100, drift: 210, letters: 100 }
+const GLOBE_DEFAULTS = { radius: 100, drift: 210, letters: 100 }
 
-const POINTER_DEFAULTS: Required<PointerGroup> = { zoom: 100, light: 100, pins: 7 }
+const POINTER_DEFAULTS = { zoom: 100, light: 100, pins: 7 }
 
 function __OriginkitBase_GlobeStudy(props) {
     const {
@@ -128,7 +128,7 @@ function __OriginkitBase_GlobeStudy(props) {
     const globe_ = { ...GLOBE_DEFAULTS, ...(globe || {}) }
     const pointer_ = { ...POINTER_DEFAULTS, ...(pointer || {}) }
 
-    const canvasRef = useRef<HTMLCanvasElement>(null)
+    const canvasRef = useRef(null)
     const sizeRef = useRef({ w: 0, h: 0 })
     sizeRef.current = { w: num(width, 0), h: num(height, 0) }
 
@@ -143,7 +143,7 @@ function __OriginkitBase_GlobeStudy(props) {
         click: 0,
     })
 
-    const vRef = useRef<Record<string, number | string>>({})
+    const vRef = useRef({})
     vRef.current = {
         base: baseColor,
         phrase: String(phrase || "").length ? String(phrase) : "globe",
@@ -168,7 +168,7 @@ function __OriginkitBase_GlobeStudy(props) {
             return
         }
 
-        let land: Uint8Array | null = null
+        let land = null
         try {
             const bin = atob(LAND_B64)
             land = new Uint8Array(bin.length)
@@ -176,7 +176,7 @@ function __OriginkitBase_GlobeStudy(props) {
         } catch {
             land = null
         }
-        const isLand = (lon: number, lat: number) => {
+        const isLand = (lon, lat) => {
             if (!land) return false
             const gx = Math.floor(((lon + 180) / 360) * MW)
             const gy = Math.floor(((90 - lat) / 180) * MH)
@@ -185,9 +185,9 @@ function __OriginkitBase_GlobeStudy(props) {
             return ((land[b >> 3] >> (b & 7)) & 1) === 1
         }
 
-        let nodes: Node[] = []
+        let nodes = []
         let builtKey = ""
-        const build = (dens: number, letterK: number, text: string) => {
+        const build = (dens, letterK, text) => {
             const step = 3.05 / dens
             nodes = []
             let k = 0
@@ -209,10 +209,10 @@ function __OriginkitBase_GlobeStudy(props) {
             builtKey = dens + "|" + letterK + "|" + text
         }
 
-        const pins: { lat: number; lon: number; t: number }[] = []
+        const pins = []
         const view = { cx: 0, cy: 0, R: 1, cs: 1, sn: 0, ct: 1, st: 0 }
 
-        const unproject = (px: number, py: number) => {
+        const unproject = (px, py) => {
             const x1 = (px - view.cx) / view.R
             const y2 = (view.cy - py) / view.R
             const q = 1 - x1 * x1 - y2 * y2
@@ -235,15 +235,15 @@ function __OriginkitBase_GlobeStudy(props) {
         let zoom = 1
         let zoomT = 1
         let seenClick = 0
-        const sea: number[] = []
-        const soil: number[] = []
-        const land8: number[][] = []
+        const sea = []
+        const soil = []
+        const land8[] = []
 
-        const render = (now: number) => {
+        const render = (now) => {
             const dt = Math.min(0.05, (now - last) / 1000)
             last = now
             const v = vRef.current
-            const sp = v.speed as number
+            const sp = v.speed
             clock += dt * sp
 
             const dpr = Math.min(window.devicePixelRatio || 1, MAX_DPR)
@@ -259,19 +259,19 @@ function __OriginkitBase_GlobeStudy(props) {
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
             ctx.clearRect(0, 0, cw, ch)
 
-            const key = (v.density as number) + "|" + (v.letters as number) + "|" + (v.phrase as string)
-            if (key !== builtKey) build(v.density as number, v.letters as number, v.phrase as string)
+            const key = (v.density) + "|" + (v.letters) + "|" + (v.phrase)
+            if (key !== builtKey) build(v.density, v.letters, v.phrase)
 
             const u = Math.min(cw, ch)
             const ptr = ptrRef.current
-            const hv = (v.hover as number) * (ptr.on ? 1 : 0)
+            const hv = (v.hover) * (ptr.on ? 1 : 0)
 
             zoom += (zoomT - zoom) * Math.min(1, dt / 0.18)
 
             const cx = cw / 2
             const cy = ch / 2 + u * 0.035
-            const R = u * 0.318 * zoom * (v.radius as number)
-            const fs = u * 0.0275 * Math.pow(zoom, 0.72) * (v.glyphSize as number)
+            const R = u * 0.318 * zoom * (v.radius)
+            const fs = u * 0.0275 * Math.pow(zoom, 0.72) * (v.glyphSize)
 
             if (ptr.dragging) {
                 const dspin = (ptr.dx * u) / R
@@ -286,7 +286,7 @@ function __OriginkitBase_GlobeStudy(props) {
                 vel += (clampN(dspin * inv, -9, 9) - vel) * k
                 vtilt += (clampN(dtilt * inv, -9, 9) - vtilt) * k
             } else {
-                const idle = 0.16 * (v.drift as number) * (hv > 0 ? 0.28 : 1)
+                const idle = 0.16 * (v.drift) * (hv > 0 ? 0.28 : 1)
                 vel += (idle - vel) * Math.min(1, (dt * sp) / 0.9)
                 vtilt *= Math.exp(-dt * sp * 6.6)
                 tilt = clampN(tilt + vtilt * dt * sp, -1.15, 1.15)
@@ -297,7 +297,7 @@ function __OriginkitBase_GlobeStudy(props) {
             if (ptr.click !== seenClick) {
                 seenClick = ptr.click
                 const g = unproject(ptr.x, ptr.y)
-                const cap = v.pins as number
+                const cap = v.pins
                 if (g && cap > 0) {
                     pins.push({ lat: g.lat, lon: g.lon, t: clock })
                     while (pins.length > cap) pins.shift()
@@ -316,15 +316,15 @@ function __OriginkitBase_GlobeStudy(props) {
             view.ct = ct
             view.st = st
 
-            const lightK = (v.light as number) * hv
+            const lightK = (v.light) * hv
             const lx = lightK > 0 && !ptr.dragging ? ptr.x : -1e9
             const ly = lightK > 0 && !ptr.dragging ? ptr.y : -1e9
             const lr = u * 0.2
             const lr2 = lr * lr
 
-            const ink = parseRGB(v.base as string, [226, 228, 233])
+            const ink = parseRGB(v.base, [226, 228, 233])
             const rgb = ink[0] + "," + ink[1] + "," + ink[2]
-            const tone = (a: number) => "rgba(" + rgb + "," + clampN(a, 0, 1).toFixed(3) + ")"
+            const tone = (a) => "rgba(" + rgb + "," + clampN(a, 0, 1).toFixed(3) + ")"
 
             ctx.textAlign = "center"
             ctx.textBaseline = "middle"
@@ -369,7 +369,7 @@ function __OriginkitBase_GlobeStudy(props) {
             }
 
             const dmin = Math.max(0.7, u * 0.0029)
-            const dots = (list: number[], baseA: number, gain: number, grow: number) => {
+            const dots = (list, baseA, gain, grow) => {
                 for (let lvl = 0; lvl < 6; lvl++) {
                     const z = (lvl + 0.5) / 6
                     const dsz = dmin * grow * (0.55 + 0.75 * z)
@@ -441,14 +441,14 @@ function __OriginkitBase_GlobeStudy(props) {
 
         let lastX = 0
         let lastY = 0
-        const localPoint = (e: PointerEvent) => {
+        const localPoint = (e) => {
             const r = canvas.getBoundingClientRect()
             if (r.width <= 0 || r.height <= 0) return null
             const cw = sizeRef.current.w || canvas.clientWidth || 1200
             const ch = sizeRef.current.h || canvas.clientHeight || 800
             return { x: ((e.clientX - r.left) / r.width) * cw, y: ((e.clientY - r.top) / r.height) * ch }
         }
-        const track = (e: PointerEvent) => {
+        const track = (e) => {
             const p = localPoint(e)
             if (!p) return
             const ptr = ptrRef.current
@@ -464,7 +464,7 @@ function __OriginkitBase_GlobeStudy(props) {
             lastX = p.x
             lastY = p.y
         }
-        const onDown = (e: PointerEvent) => {
+        const onDown = (e) => {
             const p = localPoint(e)
             if (!p) return
             const ptr = ptrRef.current
@@ -488,11 +488,11 @@ function __OriginkitBase_GlobeStudy(props) {
         const onLeave = () => {
             if (!ptrRef.current.dragging) ptrRef.current.on = 0
         }
-        const onWheel = (e: WheelEvent) => {
+        const onWheel = (e) => {
             const v = vRef.current
-            if ((v.zoom as number) <= 0) return
+            if ((v.zoom) <= 0) return
             e.preventDefault()
-            zoomT = clampN(zoomT * Math.exp(-e.deltaY * 0.0016 * (v.zoom as number)), 0.85, 2.6)
+            zoomT = clampN(zoomT * Math.exp(-e.deltaY * 0.0016 * (v.zoom)), 0.85, 2.6)
         }
 
         canvas.addEventListener("pointermove", track)
@@ -559,6 +559,6 @@ const __originkitPresetProps = {
   }
 };
 
-export default function GlobeStudy(props: Record<string, unknown>) {
-  return <__OriginkitBase_GlobeStudy {...(__originkitPresetProps as Record<string, unknown>)} {...props} />;
+export default function GlobeStudy(props) {
+  return <__OriginkitBase_GlobeStudy {...(__originkitPresetProps)} {...props} />;
 }
