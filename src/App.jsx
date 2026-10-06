@@ -47,6 +47,15 @@ export default function App() {
 
   useEffect(() => {
     if (!siteRef.current) return;
+    const mount = siteRef.current.querySelector(".tbm-globe-mount");
+    if (!mount) return;
+    const root = createRoot(mount);
+    root.render(<GlobeStudy background="#050505" baseColor="#FF6A00" density={48} glyphSize={82} speed={82} hover={120} />);
+    return () => root.unmount();
+  }, [view]);
+
+  useEffect(() => {
+    if (!siteRef.current) return;
     const cleanup = setupSiteEffects(siteRef.current);
     const target = window.location.hash.replace("#", "");
     const timer = window.setTimeout(() => {
