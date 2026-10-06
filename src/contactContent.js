@@ -169,6 +169,7 @@ export const contactContent = `
   <a href="mailto:hello.thebuzzmedia@gmail.com" class="contact-round-cta"><span>Get In<br>Touch</span><b>↗</b></a>
 </section>
 
+<section id="tbm-globe-contact" class="tbm-globe-section" aria-label="Global connection"><div id="tbm-globe-contact-mount" class="tbm-globe-mount"></div></section>
 <footer class="contact-footer">
   <div class="contact-footer-brand">
     <img src="https://raw.githubusercontent.com/Ateeqqqq/thebuzzmedia-assets/refs/heads/main/logo.png-Photoroom.png" alt="The Buzz Media">
