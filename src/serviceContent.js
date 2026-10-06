@@ -85,6 +85,7 @@ export const serviceContent = `
   <a href="#contact" class="service-round-cta"><span>Get In<br>Touch</span><b>↗</b></a>
 </section>
 
+<section id="tbm-globe-services" class="tbm-globe-section" aria-label="Global connection"><div id="tbm-globe-services-mount" class="tbm-globe-mount"></div></section>
 <footer class="about-footer service-footer social-footer premium-footer">
   <div class="premium-footer-top">
     <div class="premium-footer-brand">
