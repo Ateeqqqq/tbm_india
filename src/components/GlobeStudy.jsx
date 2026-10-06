@@ -237,7 +237,7 @@ function __OriginkitBase_GlobeStudy(props) {
         let seenClick = 0
         const sea = []
         const soil = []
-        const land8[] = []
+        const land8 = []
 
         const render = (now) => {
             const dt = Math.min(0.05, (now - last) / 1000)
