@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { createRoot } from "react-dom/client";
+import GlobeStudy from "./components/GlobeStudy";
 import { homeContent } from "./homeContent";
 import { contactContent } from "./contactContent";
 import { aboutContent } from "./aboutContent";
