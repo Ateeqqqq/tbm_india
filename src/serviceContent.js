@@ -28,7 +28,7 @@ export const serviceContent = `
   <div class="service-hero-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="service-hero-inner service-reveal">
     <p class="service-kicker">THE BUZZ MEDIA · OUR SERVICES</p>
-    <h1>Digital solutions by <span>The Buzz Media</span><br>to elevate your brand.</h1>
+    <h1>Digital solutions by <span class="crystal-glow" aria-label="The Buzz Media"><i class="crystal-sparkle crystal-sparkle-1" aria-hidden="true">✦</i><i class="crystal-sparkle crystal-sparkle-2" aria-hidden="true">✦</i><i class="crystal-sparkle crystal-sparkle-3" aria-hidden="true">✦</i><i class="crystal-sparkle crystal-sparkle-4" aria-hidden="true">✦</i><i class="crystal-sparkle crystal-sparkle-5" aria-hidden="true">✦</i><span class="crystal-glow-base">The Buzz Media</span><span class="crystal-glow-shine" aria-hidden="true">The Buzz Media</span></span><br>to elevate your brand.</h1>
     <div class="service-hero-bottom">
       <p>Strategy, design, technology and marketing working together to turn ambitious ideas into measurable digital momentum.</p>
       <a href="#service-list" class="service-hero-link">Explore services <span>↘</span></a>
