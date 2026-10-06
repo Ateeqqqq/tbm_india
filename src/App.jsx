@@ -1,6 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { createRoot } from "react-dom/client";
-import GlobeStudy from "./components/GlobeStudy";
 import { homeContent } from "./homeContent";
 import { contactContent } from "./contactContent";
 import { aboutContent } from "./aboutContent";
@@ -44,15 +42,6 @@ export default function App() {
     window.addEventListener("hashchange", onHashChange);
     return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
-
-  useEffect(() => {
-    if (!siteRef.current) return;
-    const mount = siteRef.current.querySelector(".tbm-globe-mount");
-    if (!mount) return;
-    const root = createRoot(mount);
-    root.render(<GlobeStudy background="#050505" baseColor="#FF6A00" density={48} glyphSize={82} speed={82} hover={120} />);
-    return () => root.unmount();
-  }, [view]);
 
   useEffect(() => {
     if (!siteRef.current) return;
